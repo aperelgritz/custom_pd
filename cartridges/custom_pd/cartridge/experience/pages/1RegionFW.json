@@ -1,0 +1,13 @@
+{
+    "name":"1 Region Full Width",
+    "description":"",
+    "region_definitions":[
+      {
+        "id":"main",
+        "name":"Main Region",
+        "component_type_exclusions": [
+          { "type_id": "assets.headlinebanner" }
+        ]
+      }
+    ]
+}

@@ -1,0 +1,84 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+</isscript>
+
+
+<div class="infocard-container">
+    <isif condition="${pdict.card_link !== ''}">
+        <a href="${pdict.card_link}" target="_blank">
+    </isif>
+    <div
+        class="${pdict.card_hover_effect}"
+        style="
+            box-sizing: border-box;
+            width: ${pdict.card_width};
+            max-width: ${pdict.card_max_width};
+            height: ${pdict.card_height};
+            margin: ${pdict.card_margin};
+            background-color: ${pdict.card_bgnd_color};
+            border-radius: ${pdict.card_border_radius};
+            box-shadow: ${pdict.card_box_shadow};
+            overflow: hidden;
+    ">
+        <div style="
+            background-image:url(${pdict.image.src.mobile});
+            background-size: ${pdict.img_bgnd_size};
+            background-position: center center;
+            background-repeat: no-repeat;
+            width: ${pdict.img_width};
+            height: ${pdict.img_height};
+            margin: ${pdict.img_margin};
+            border-radius: ${pdict.img_border_radius};
+        "></div>
+
+
+        <div style="
+            display: flex;
+            flex-direction: ${pdict.ctnr_flex_direction};
+            justify-content: ${pdict.ctnr_justify_content};
+            align-items: ${pdict.ctnr_align_items};
+        ">
+            <isif condition="${pdict.title_show === true}">
+                <div style="
+                    padding: ${pdict.title_padding};
+                    font-size: ${pdict.title_font_size};
+                    color: ${pdict.title_color};
+                    font-family: ${pdict.title_font_family};
+                    font-weight: ${pdict.title_font_weight};
+                    font-style: ${pdict.title_font_style};
+                    text-align: ${pdict.title_text_align};
+                ">${pdict.title_text}</div>
+            </isif>
+
+            <isif condition="${pdict.subtitle_show === true}">
+                <div style="
+                    padding: ${pdict.subtitle_padding};
+                    font-size: ${pdict.subtitle_font_size};
+                    color: ${pdict.subtitle_color};
+                    font-family: ${pdict.subtitle_font_family};
+                    font-weight: ${pdict.subtitle_font_weight};
+                    font-style: ${pdict.subtitle_font_style};
+                    text-align: ${pdict.subtitle_text_align};
+                ">${pdict.subtitle_text}</div>
+            </isif>
+
+            <isif condition="${pdict.link_show === true}">
+                <a href="${pdict.link}" style="text-decoration:none;">
+                    <div style="
+                        padding: ${pdict.link_padding};
+                        font-size: ${pdict.link_font_size};
+                        color: ${pdict.link_color};
+                        font-family: ${pdict.link_font_family};
+                        font-weight: ${pdict.link_font_weight};
+                        font-style: ${pdict.link_font_style};
+                        text-align: ${pdict.link_text_align};
+                    ">${pdict.link_text}</div>
+                </a>
+            </isif>
+
+        </div>
+    </div>
+    <isif condition="${pdict.card_link}">
+        </a>
+    </isif>
+</div>

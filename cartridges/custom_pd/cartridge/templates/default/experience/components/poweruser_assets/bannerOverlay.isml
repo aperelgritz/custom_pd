@@ -1,0 +1,92 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+</isscript>
+
+<div class="banneroverlay-container">
+    <div style="
+        display: flex;
+        width: ${pdict.width};
+        height: ${pdict.height};
+        margin: ${pdict.margin};
+        background-image:url(${pdict.image.src.mobile});
+        background-size: ${pdict.background_size};
+        background-position: ${pdict.background_position};
+        background-repeat: ${pdict.background_repeat};
+        flex-direction: ${pdict.flex_direction};
+        justify-content: ${pdict.justify_content};
+        align-items: ${pdict.align_items};
+        background-position-x: ${pdict.image.focalPointX};
+        background-position-y: ${pdict.image.focalPointY};
+    ">
+        <a
+            <isif condition="${pdict.banner_link !== null}">
+                href="${pdict.banner_link}" target="_self" class="xp-anchor-cover"
+            <iselse>
+                href="#" style="pointer-events:none"
+            </isif>
+        ></a>
+
+        <isif condition="${pdict.title_show === true}">
+            <div style="
+                box-sizing: border-box;
+                width: ${pdict.title_width};
+                border: ${pdict.title_border};
+                padding: ${pdict.title_padding};
+                margin: ${pdict.title_margin};
+                background-color: ${pdict.title_bgnd_color};
+                font-size: ${pdict.title_font_size};
+                color: ${pdict.title_color};
+                font-family: ${pdict.title_font_family};
+                font-weight: ${pdict.title_font_weight};
+                font-style: ${pdict.title_font_style};
+                text-align: ${pdict.title_text_align};
+                text-shadow: ${pdict.title_text_shadow};
+            ">${pdict.title_text}</div>
+        </isif>
+
+        <isif condition="${pdict.subtitle_show === true}">
+            <div style="
+                box-sizing: border-box;
+                width: ${pdict.subtitle_width};
+                border: ${pdict.subtitle_border};
+                padding: ${pdict.subtitle_padding};
+                margin: ${pdict.subtitle_margin};
+                background-color: ${pdict.subtitle_bgnd_color};
+                font-size: ${pdict.subtitle_font_size};
+                color: ${pdict.subtitle_color};
+                font-family: ${pdict.subtitle_font_family};
+                font-weight: ${pdict.subtitle_font_weight};
+                font-style: ${pdict.subtitle_font_style};
+                text-align: ${pdict.subtitle_text_align};
+                text-shadow: ${pdict.subtitle_text_shadow};
+            ">${pdict.subtitle_text}</div>
+        </isif>
+
+        <isif condition="${pdict.btn_show === true}">
+                <div style="
+                    box-sizing: border-box;
+                    width: ${pdict.btn_width};
+                    border: ${pdict.btn_border};
+                    padding: ${pdict.btn_padding};
+                    margin: ${pdict.btn_margin};
+                    background-color: ${pdict.btn_bgnd_color};
+                    font-size: ${pdict.btn_font_size};
+                    color: ${pdict.btn_color};
+                    font-family: ${pdict.btn_font_family};
+                    font-weight: ${pdict.btn_font_weight};
+                    font-style: ${pdict.btn_font_style};
+                    text-align: ${pdict.btn_text_align};
+                    border-radius: ${pdict.btn_border_radius};
+                ">
+
+                    <a
+                        <isif condition="${pdict.btnLink !== null}">
+                            href="${pdict.btnLink}" target="_self" style="text-decoration:none;"
+                        <iselse>
+                            href="#" style="pointer-events:none"
+                        </isif>
+                    >${pdict.btn_text}</a>
+                </div>
+        </isif>
+    </div>
+</div>

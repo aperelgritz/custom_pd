@@ -1,0 +1,520 @@
+{
+    "name": "Info Card",
+    "description": "Image, title, subtitle, link",
+    "group": "poweruser_assets",
+    "attribute_definition_groups": [{
+            "id": "infocard_container",
+            "name": "Info Card Container",
+            "description": "",
+            "attribute_definitions": [{
+                    "id": "card_width",
+                    "name": "Width (default: 300px)",
+                    "description": "The width of the div containing the image",
+                    "type": "string",
+                    "default_value": "300px",
+                    "required": false
+                },
+                {
+                    "id": "card_max_width",
+                    "name": "Max Width (default: 300px)",
+                    "description": "The max width of the div containing the image",
+                    "type": "string",
+                    "default_value": "300px",
+                    "required": false
+                },
+                {
+                    "id": "card_height",
+                    "name": "Height (default: null)",
+                    "description": "The height of the div containing the image",
+                    "type": "string",
+                    "default_value": "null",
+                    "required": false
+                },
+                {
+                    "id": "card_margin",
+                    "name": "Margin (default: 0 auto)",
+                    "description": "The margin with respect to the containing div",
+                    "type": "string",
+                    "default_value": "0 auto",
+                    "required": false
+                },
+                {
+                    "id": "card_bgnd_color",
+                    "name": "Background Color",
+                    "description": "(default: #5679C0)",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "themer.colorpicker"
+                    },
+                    "required": false
+                },
+                {
+                    "id": "card_border_radius",
+                    "name": "Card Border Radius (default: 5px)",
+                    "description": "",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "5px"
+                },
+                {
+                    "id": "card_box_shadow",
+                    "name": "Card Box Shadow (default: 0px 2px 2px grey)",
+                    "description": "",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "0px 2px 2px grey"
+                },
+                {
+                    "id": "card_link",
+                    "name": "Card Link",
+                    "type": "url",
+                    "default_value": "",
+                    "required": false
+                },
+                {
+                    "id": "card_hover_effect",
+                    "name": "Hover Effect (default: no effect)",
+                    "type": "enum",
+                    "default_value": "None",
+                    "values": [
+                        "None",
+                        "Shadow"
+                    ],
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "cardImage",
+            "name": "Card Image",
+            "description": "The image displayed at the top of the card",
+            "attribute_definitions": [{
+                    "id": "image",
+                    "name": "Image",
+                    "type": "image",
+                    "required": true
+                },
+                {
+                    "id": "img_width",
+                    "name": "Image Width (default: 100%)",
+                    "description": "",
+                    "type": "string",
+                    "default_value": "100%",
+                    "required": false
+                },
+                {
+                    "id": "img_height",
+                    "name": "Image Height (default: 160px)",
+                    "description": "",
+                    "type": "string",
+                    "default_value": "160px",
+                    "required": false
+                },
+                {
+                    "id": "img_margin",
+                    "name": "Margin (default: 0 auto)",
+                    "description": "The margin with respect to the containing div",
+                    "type": "string",
+                    "default_value": "0 auto",
+                    "required": false
+                },
+                {
+                    "id": "img_border_radius",
+                    "name": "Image Border Radius (default: 0px)",
+                    "description": "",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "0px"
+                },
+                {
+                    "id": "img_bgnd_size",
+                    "name": "Image Background Size (default: cover)",
+                    "description": "",
+                    "type": "enum",
+                    "values": [
+                        "contain",
+                        "cover",
+                        "auto"
+                    ],
+                    "required": false,
+                    "default_value": "cover"
+                },
+                {
+                    "id": "img_bgnd_position",
+                    "name": "Image Background Position (default: center center)",
+                    "description": "",
+                    "type": "string",
+                    "default_value": "center center",
+                    "required": false
+                },
+                {
+                    "id": "img_bgnd_repeat",
+                    "name": "Image Background Repeat (default: no-repeat)",
+                    "description": "",
+                    "type": "enum",
+                    "values": [
+                        "repeat-x",
+                        "repeat-y",
+                        "repeat",
+                        "space",
+                        "round",
+                        "no-repeat"
+                    ],
+                    "required": false,
+                    "default_value": "no-repeat"
+                }
+            ]
+        },
+        {
+            "id": "calloutsContainer",
+            "name": "Callouts Container",
+            "description": "The container for card callouts",
+            "attribute_definitions": [{
+                    "id": "ctnr_flex_direction",
+                    "name": "Conatiner Flex Direction (default: column)",
+                    "description": "The direction that callouts are displayed (vertical or horizontal)",
+                    "type": "enum",
+                    "values": [
+                        "row",
+                        "row-reverse",
+                        "column",
+                        "column-reverse"
+                    ],
+                    "required": false,
+                    "default_value": "column"
+                },
+                {
+                    "id": "ctnr_justify_content",
+                    "name": "Container Justify Content (default: flex-start)",
+                    "description": "How space is distributed between and around callouts",
+                    "type": "enum",
+                    "values": [
+                        "flex-start",
+                        "flex-end",
+                        "center",
+                        "space-between",
+                        "space-around",
+                        "space-evenly"
+                    ],
+                    "required": false,
+                    "default_value": "flex-start"
+                },
+                {
+                    "id": "ctnr_align_items",
+                    "name": "Container Align Items (default: flex-start)",
+                    "description": "How callouts are justified in the cross axis to flex-direction",
+                    "type": "enum",
+                    "values": [
+                        "flex-start",
+                        "flex-end",
+                        "center",
+                        "stretch",
+                        "baseline"
+                    ],
+                    "required": false,
+                    "default_value": "flex-start"
+                }
+            ]
+        },
+        {
+            "id": "titleCallout",
+            "name": "Title Callout",
+            "description": "Callout message box and text",
+            "attribute_definitions": [{
+                    "id": "title_show",
+                    "name": "Show title",
+                    "description": "Show or hide title",
+                    "type": "boolean",
+                    "required": false
+                },
+                {
+                    "id": "title_text",
+                    "name": "Title Text",
+                    "description": "Text",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "title_padding",
+                    "name": "Title Padding (default: 5px 5px 5px 8px)",
+                    "description": "",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "5px 5px 5px 8px"
+                },
+                {
+                    "id": "title_font_size",
+                    "name": "Title Font Size (default: 25px)",
+                    "description": "",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "25px"
+                },
+                {
+                    "id": "title_color",
+                    "name": "Title color (default: #5679C0)",
+                    "description": "",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "themer.colorpicker"
+                    },
+                    "required": false
+                },
+                {
+                    "id": "title_font_family",
+                    "name": "Title Font Family (default: Tahoma)",
+                    "description": "",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "Tahoma"
+                },
+                {
+                    "id": "title_font_weight",
+                    "name": "Title Font Weight (default: 600)",
+                    "description": "",
+                    "type": "enum",
+                    "values": [
+                        "100",
+                        "200",
+                        "300",
+                        "400",
+                        "500",
+                        "600",
+                        "700",
+                        "800",
+                        "900"
+                    ],
+                    "required": false,
+                    "default_value": "600"
+                },
+                {
+                    "id": "title_font_style",
+                    "name": "Title Font Style (default: normal)",
+                    "description": "",
+                    "type": "enum",
+                    "values": [
+                        "normal",
+                        "italic",
+                        "oblique"
+                    ],
+                    "required": false,
+                    "default_value": "normal"
+                },
+                {
+                    "id": "title_text_align",
+                    "name": "Title Text Align (default: left)",
+                    "description": "",
+                    "type": "enum",
+                    "values": [
+                        "left",
+                        "right",
+                        "center"
+                    ],
+                    "required": false,
+                    "default_value": "left"
+                }
+            ]
+        },
+        {
+            "id": "subtitleCallout",
+            "name": "Subtitle Callout",
+            "description": "Callout message box and text",
+            "attribute_definitions": [{
+                    "id": "subtitle_show",
+                    "name": "Show subtitle",
+                    "description": "Show or hide subtitle",
+                    "type": "boolean",
+                    "required": false
+                },
+                {
+                    "id": "subtitle_text",
+                    "name": "Subtitle Text",
+                    "description": "Text",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "subtitle_padding",
+                    "name": "Subtitle Padding (default: 5px 5px 5px 8px)",
+                    "description": "",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "5px 5px 5px 8px"
+                },
+                {
+                    "id": "subtitle_font_size",
+                    "name": "Subtitle Font Size (default: 15px)",
+                    "description": "",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "15px"
+                },
+                {
+                    "id": "subtitle_color",
+                    "name": "Subtitle color (default: #686868)",
+                    "description": "",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "#686868"
+                },
+                {
+                    "id": "subtitle_font_family",
+                    "name": "Subtitle Font Family (default: Tahoma)",
+                    "description": "",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "Tahoma"
+                },
+                {
+                    "id": "subtitle_font_weight",
+                    "name": "Subtitle Font Weight (default: 400)",
+                    "description": "",
+                    "type": "enum",
+                    "values": [
+                        "100",
+                        "200",
+                        "300",
+                        "400",
+                        "500",
+                        "600",
+                        "700",
+                        "800",
+                        "900"
+                    ],
+                    "required": false,
+                    "default_value": "400"
+                },
+                {
+                    "id": "subtitle_font_style",
+                    "name": "Subtitle Font Style (default: normal)",
+                    "description": "",
+                    "type": "enum",
+                    "values": [
+                        "normal",
+                        "italic",
+                        "oblique"
+                    ],
+                    "required": false,
+                    "default_value": "normal"
+                },
+                {
+                    "id": "subtitle_text_align",
+                    "name": "subtitle Text Align (default: left)",
+                    "description": "",
+                    "type": "enum",
+                    "values": [
+                        "left",
+                        "right",
+                        "center"
+                    ],
+                    "required": false,
+                    "default_value": "left"
+                }
+            ]
+        },
+        {
+            "id": "linkCallout",
+            "name": "Link Callout",
+            "description": "Link styling and callout message",
+            "attribute_definitions": [{
+                    "id": "link_show",
+                    "name": "Show link",
+                    "description": "Show or hide link",
+                    "type": "boolean",
+                    "required": false
+                },
+                {
+                    "id": "link",
+                    "name": "Link",
+                    "type": "url",
+                    "required": false
+                },
+                {
+                    "id": "link_text",
+                    "name": "Link Text",
+                    "description": "Text",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "link_padding",
+                    "name": "Link Padding (default: 5px 8px 5px 8px)",
+                    "description": "",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "5px 8px 5px 8px"
+                },
+                {
+                    "id": "link_font_size",
+                    "name": "Link Font Size (default: 17px)",
+                    "description": "",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "17px"
+                },
+                {
+                    "id": "link_color",
+                    "name": "Link color (default: #482462)",
+                    "description": "",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "#482462"
+                },
+                {
+                    "id": "link_font_family",
+                    "name": "Link Font Family (default: Tahoma)",
+                    "description": "",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "Tahoma"
+                },
+                {
+                    "id": "link_font_weight",
+                    "name": "Link Font Weight (default: 400)",
+                    "description": "",
+                    "type": "enum",
+                    "values": [
+                        "100",
+                        "200",
+                        "300",
+                        "400",
+                        "500",
+                        "600",
+                        "700",
+                        "800",
+                        "900"
+                    ],
+                    "required": false,
+                    "default_value": "400"
+                },
+                {
+                    "id": "link_font_style",
+                    "name": "Link Font Style (default: normal)",
+                    "description": "",
+                    "type": "enum",
+                    "values": [
+                        "normal",
+                        "italic",
+                        "oblique"
+                    ],
+                    "required": false,
+                    "default_value": "normal"
+                },
+                {
+                    "id": "link_text_align",
+                    "name": "Link Text Align (default: left)",
+                    "description": "",
+                    "type": "enum",
+                    "values": [
+                        "left",
+                        "right",
+                        "center"
+                    ],
+                    "required": false,
+                    "default_value": "left"
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

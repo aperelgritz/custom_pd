@@ -1,0 +1,243 @@
+{
+    "name": "Separator",
+    "description": "Left Graphic, Center Text, Right Graphic",
+    "group": "poweruser_assets",
+    "attribute_definition_groups": [{
+            "id": "separatorContainer",
+            "name": "Separator Container",
+            "description": "Container div for the separator",
+            "attribute_definitions": [{
+                    "id": "width",
+                    "name": "Width (default: 100%)",
+                    "description": "The width of the div",
+                    "type": "string",
+                    "default_value": "100%",
+                    "required": false
+                },
+                {
+                    "id": "height",
+                    "name": "Height (default: 100px)",
+                    "description": "The height of the div",
+                    "type": "string",
+                    "default_value": "100px",
+                    "required": false
+                },
+                {
+                    "id": "border",
+                    "name": "Border (default: 1px solid white;)",
+                    "description": "",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "1px solid white;"
+                },
+                {
+                    "id": "padding",
+                    "name": "Padding (default: 0px 0px 0px 0px)",
+                    "description": "",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "0px 0px 0px 0px"
+                },
+                {
+                    "id": "margin",
+                    "name": "Margin (default: 0 auto)",
+                    "description": "The margin with respect to the containing div",
+                    "type": "string",
+                    "default_value": "0 auto",
+                    "required": false
+                },
+                {
+                    "id": "flex_direction",
+                    "name": "Flex Direction (default: row)",
+                    "description": "The direction of the text and graphics divs",
+                    "type": "enum",
+                    "values": [
+                        "row",
+                        "row-reverse",
+                        "column",
+                        "column-reverse"
+                    ],
+                    "required": false,
+                    "default_value": "column"
+                },
+                {
+                    "id": "justify_content",
+                    "name": "Justify Content (default: space-around)",
+                    "description": "How space is distributed between and around divs",
+                    "type": "enum",
+                    "values": [
+                        "flex-start",
+                        "flex-end",
+                        "center",
+                        "space-between",
+                        "space-around",
+                        "space-evenly"
+                    ],
+                    "required": false,
+                    "default_value": "space-around"
+                },
+                {
+                    "id": "align_items",
+                    "name": "Align Items (default: center)",
+                    "description": "How divs are justified in the cross axis to flex-direction",
+                    "type": "enum",
+                    "values": [
+                        "flex-start",
+                        "flex-end",
+                        "center",
+                        "stretch",
+                        "baseline"
+                    ],
+                    "required": false,
+                    "default_value": "center"
+                }
+            ]
+        },
+        {
+            "id": "leftGraphic",
+            "name": "Left Graphic",
+            "description": "Styling of left-hand side graphic",
+            "attribute_definitions": [{
+                    "id": "left_width",
+                    "name": "Width (default: 35%)",
+                    "description": "",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "35%"
+                },
+                {
+                    "id": "left_height",
+                    "name": "Height (default: 2px)",
+                    "description": "",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "2px"
+                },
+                {
+                    "id": "left_bgnd",
+                    "name": "Background (default: linear-gradient(90deg, #e66465, #9198e5))",
+                    "description": "",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "linear-gradient(90deg, #e66465, #9198e5)"
+                }
+            ]
+        },
+        {
+            "id": "separatorText",
+            "name": "Separator Text",
+            "description": "",
+            "attribute_definitions": [{
+                    "id": "separator_text",
+                    "name": "Separator Text",
+                    "description": "Text",
+                    "type": "text",
+                    "required": false,
+                    "default_value": "Separator"
+                },
+                {
+                    "id": "sep_text_font_size",
+                    "name": "Separator Text Font Size (default: 50px)",
+                    "description": "",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "50px"
+                },
+                {
+                    "id": "sep_text_color",
+                    "name": "Separator Text color (default: grey)",
+                    "description": "",
+                    "type": "custom",
+                    "required": false,
+                    "editor_definition": {
+                        "type": "themer.colorpicker"
+                    }
+                },
+                {
+                    "id": "sep_text_font_family",
+                    "name": "Separator Text Font Family (default: Tahoma)",
+                    "description": "",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "Tahoma"
+                },
+                {
+                    "id": "sep_text_font_weight",
+                    "name": "Separator Text Font Weight (default: 800)",
+                    "description": "",
+                    "type": "enum",
+                    "values": [
+                        "100",
+                        "200",
+                        "300",
+                        "400",
+                        "500",
+                        "600",
+                        "700",
+                        "800",
+                        "900"
+                    ],
+                    "required": false,
+                    "default_value": "800"
+                },
+                {
+                    "id": "sep_text_font_style",
+                    "name": "Separator Text Font Style (default: italic)",
+                    "description": "",
+                    "type": "enum",
+                    "values": [
+                        "normal",
+                        "italic",
+                        "oblique"
+                    ],
+                    "required": false,
+                    "default_value": "italic"
+                },
+                {
+                    "id": "sep_text_text_align",
+                    "name": "Separator Text Text Align (default: center)",
+                    "description": "",
+                    "type": "enum",
+                    "values": [
+                        "left",
+                        "right",
+                        "center"
+                    ],
+                    "required": false,
+                    "default_value": "center"
+                }
+            ]
+        },
+        {
+            "id": "rightGraphic",
+            "name": "Right Graphic",
+            "description": "Styling of right-hand side graphic",
+            "attribute_definitions": [{
+                    "id": "right_width",
+                    "name": "Width (default: 35%)",
+                    "description": "",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "35%"
+                },
+                {
+                    "id": "right_height",
+                    "name": "Height (default: 2px)",
+                    "description": "",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "2px"
+                },
+                {
+                    "id": "right_bgnd",
+                    "name": "Background (default: linear-gradient(90deg, #9198e5, #e66465))",
+                    "description": "",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "linear-gradient(90deg, #9198e5, #e66465)"
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

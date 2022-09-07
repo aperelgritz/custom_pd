@@ -1,0 +1,550 @@
+{
+    "name": "Banner with Overlay",
+    "description": "Image and text overlay",
+    "group": "poweruser_assets",
+    "attribute_definition_groups": [{
+            "id": "bannerImage",
+            "name": "Banner Image",
+            "description": "The visual display of the banner image in the background.",
+            "attribute_definitions": [{
+                    "id": "image",
+                    "name": "Image",
+                    "type": "image",
+                    "required": true
+                },
+                {
+                    "id": "banner_link",
+                    "name": "Link",
+                    "type": "url",
+                    "default_value": "",
+                    "required": false
+                },
+                {
+                    "id": "width",
+                    "name": "Width (default: 100%)",
+                    "description": "The width of the div containing the image",
+                    "type": "string",
+                    "default_value": "100%",
+                    "required": false
+                },
+                {
+                    "id": "height",
+                    "name": "Height (default: 60vh)",
+                    "description": "The height of the div containing the image",
+                    "type": "string",
+                    "default_value": "60vh",
+                    "required": false
+                },
+                {
+                    "id": "margin",
+                    "name": "Margin (default: 0 auto)",
+                    "description": "The margin with respect to the containing div",
+                    "type": "string",
+                    "default_value": "0 auto",
+                    "required": false
+                },
+                {
+                    "id": "background_size",
+                    "name": "Background Size (default: contain)",
+                    "description": "How the image fits into the available space",
+                    "type": "enum",
+                    "values": [
+                        "contain",
+                        "cover",
+                        "auto"
+                    ],
+                    "required": false,
+                    "default_value": "contain"
+                },
+                {
+                    "id": "background_repeat",
+                    "name": "Background Repeat (default: no-repeat)",
+                    "description": "How the image is repeated",
+                    "type": "enum",
+                    "values": [
+                        "repeat-x",
+                        "repeat-y",
+                        "repeat",
+                        "space",
+                        "round",
+                        "no-repeat"
+                    ],
+                    "required": false,
+                    "default_value": "no-repeat"
+                },
+                {
+                    "id": "flex_direction",
+                    "name": "Flex Direction (default: column)",
+                    "description": "The direction that callouts are displayed (vertical or horizontal)",
+                    "type": "enum",
+                    "values": [
+                        "row",
+                        "row-reverse",
+                        "column",
+                        "column-reverse"
+                    ],
+                    "required": false,
+                    "default_value": "column"
+                },
+                {
+                    "id": "justify_content",
+                    "name": "Justify Content (default: center)",
+                    "description": "How space is distributed between and around callouts",
+                    "type": "enum",
+                    "values": [
+                        "flex-start",
+                        "flex-end",
+                        "center",
+                        "space-between",
+                        "space-around",
+                        "space-evenly"
+                    ],
+                    "required": false,
+                    "default_value": "center"
+                },
+                {
+                    "id": "align_items",
+                    "name": "Align Items (default: flex-start)",
+                    "description": "How callouts are justified in the cross axis to flex-direction",
+                    "type": "enum",
+                    "values": [
+                        "flex-start",
+                        "flex-end",
+                        "center",
+                        "stretch",
+                        "baseline"
+                    ],
+                    "required": false,
+                    "default_value": "flex-start"
+                }
+            ]
+        },
+        {
+            "id": "titleCallout",
+            "name": "Title Callout",
+            "description": "Callout message box and text. box-sizing:border-box is hard-coded.",
+            "attribute_definitions": [{
+                    "id": "title_show",
+                    "name": "Show title",
+                    "description": "Show or hide title",
+                    "type": "boolean",
+                    "required": false
+                }, {
+                    "id": "title_text",
+                    "name": "Title Text",
+                    "description": "Text",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "title_width",
+                    "name": "Title Width",
+                    "description": "eg. 300px",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "300px"
+                },
+                {
+                    "id": "title_border",
+                    "name": "Title Border",
+                    "description": "eg. 1px solid red",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "1px solid red"
+                },
+                {
+                    "id": "title_padding",
+                    "name": "Title Padding",
+                    "description": "eg. 10px 10px 10px 10px",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "10px 10px 10px 10px"
+                },
+                {
+                    "id": "title_margin",
+                    "name": "Title Margin",
+                    "description": "eg. 10px 50px 10px 50px",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "10px 50px 10px 50px"
+                },
+                {
+                    "id": "title_bgnd_color",
+                    "name": "Title Background Color",
+                    "description": "default: transparent",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "themer.colorpicker"
+                    },
+                    "required": false
+                },
+                {
+                    "id": "title_font_size",
+                    "name": "Title Font Size",
+                    "description": "eg. 50px",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "50px"
+                },
+                {
+                    "id": "title_color",
+                    "name": "Title color",
+                    "description": "eg. white",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "themer.colorpicker"
+                    },
+                    "required": false
+                },
+                {
+                    "id": "title_font_family",
+                    "name": "Title Font Family",
+                    "description": "eg. Tahoma",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "Tahoma"
+                },
+                {
+                    "id": "title_font_weight",
+                    "name": "Title Font Weight",
+                    "description": "eg. 800",
+                    "type": "enum",
+                    "values": [
+                        "100",
+                        "200",
+                        "300",
+                        "400",
+                        "500",
+                        "600",
+                        "700",
+                        "800",
+                        "900"
+                    ],
+                    "required": false,
+                    "default_value": "800"
+                },
+                {
+                    "id": "title_font_style",
+                    "name": "Title Font Style",
+                    "description": "eg. italic",
+                    "type": "enum",
+                    "values": [
+                        "normal",
+                        "italic",
+                        "oblique"
+                    ],
+                    "required": false,
+                    "default_value": "italic"
+                },
+                {
+                    "id": "title_text_align",
+                    "name": "Title Text Align",
+                    "description": "eg. center",
+                    "type": "enum",
+                    "values": [
+                        "left",
+                        "right",
+                        "center"
+                    ],
+                    "required": false,
+                    "default_value": "center"
+                },
+                {
+                    "id": "title_text_shadow",
+                    "name": "Title Text Shadow (default: 2px 2px 5px #3c3c3c)",
+                    "description": "",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "2px 2px 5px #3c3c3c"
+                }
+            ]
+        },
+        {
+            "id": "subtitleCallout",
+            "name": "Subtitle Callout",
+            "description": "Subtitle callout message box and text. box-sizing:border-box is hard-coded.",
+            "attribute_definitions": [{
+                    "id": "subtitle_show",
+                    "name": "Show subtitle",
+                    "description": "Show or hide subtitle",
+                    "type": "boolean",
+                    "required": false
+                }, {
+                    "id": "subtitle_text",
+                    "name": "Subtitle Text",
+                    "description": "Text",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "subtitle_width",
+                    "name": "Subtitle Width",
+                    "description": "eg. 300px",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "300px"
+                },
+                {
+                    "id": "subtitle_border",
+                    "name": "Subtitle Border",
+                    "description": "eg. 1px solid red",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "1px solid red"
+                },
+                {
+                    "id": "subtitle_padding",
+                    "name": "Subtitle Padding",
+                    "description": "eg. 10px 10px 10px 10px",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "10px 10px 10px 10px"
+                },
+                {
+                    "id": "subtitle_margin",
+                    "name": "Subtitle Margin",
+                    "description": "eg. 10px 50px 10px 50px",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "10px 50px 10px 50px"
+                },
+                {
+                    "id": "subtitle_bgnd_color",
+                    "name": "Subtitle Background Color",
+                    "description": "default: transparent",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "themer.colorpicker"
+                    },
+                    "required": false
+                },
+                {
+                    "id": "subtitle_font_size",
+                    "name": "Subtitle Font Size",
+                    "description": "eg. 50px",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "50px"
+                },
+                {
+                    "id": "subtitle_color",
+                    "name": "Subtitle color",
+                    "description": "eg. white",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "themer.colorpicker"
+                    },
+                    "required": false
+                },
+                {
+                    "id": "subtitle_font_family",
+                    "name": "Subtitle Font Family",
+                    "description": "eg. Tahoma",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "Tahoma"
+                },
+                {
+                    "id": "subtitle_font_weight",
+                    "name": "Subtitle Font Weight",
+                    "description": "eg. 800",
+                    "type": "enum",
+                    "values": [
+                        "100",
+                        "200",
+                        "300",
+                        "400",
+                        "500",
+                        "600",
+                        "700",
+                        "800",
+                        "900"
+                    ],
+                    "required": false,
+                    "default_value": "800"
+                },
+                {
+                    "id": "subtitle_font_style",
+                    "name": "Subtitle Font Style",
+                    "description": "eg. italic",
+                    "type": "enum",
+                    "values": [
+                        "normal",
+                        "italic",
+                        "oblique"
+                    ],
+                    "required": false,
+                    "default_value": "italic"
+                },
+                {
+                    "id": "subtitle_text_align",
+                    "name": "Subtitle Text Align",
+                    "description": "eg. center",
+                    "type": "enum",
+                    "values": [
+                        "left",
+                        "right",
+                        "center"
+                    ],
+                    "required": false,
+                    "default_value": "center"
+                },
+                {
+                    "id": "subtitle_text_shadow",
+                    "name": "Subtitle Text Shadow (default: 2px 2px 5px #3c3c3c)",
+                    "description": "",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "2px 2px 5px #3c3c3c"
+                }
+            ]
+        },
+        {
+            "id": "btnCallout",
+            "name": "Button Callout",
+            "description": "Button styling and callout message. box-sizing:border-box is hard-coded.",
+            "attribute_definitions": [{
+                    "id": "btn_show",
+                    "name": "Show button",
+                    "description": "Show or hide button",
+                    "type": "boolean",
+                    "required": false
+                }, {
+                    "id": "btnLink",
+                    "name": "Button Link",
+                    "type": "url",
+                    "required": false
+                },
+                {
+                    "id": "btn_text",
+                    "name": "Button Text",
+                    "description": "Text",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "btn_width",
+                    "name": "Button Width",
+                    "description": "eg. 300px",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "200px"
+                },
+                {
+                    "id": "btn_border",
+                    "name": "Button Border",
+                    "description": "eg. 1px solid red",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "1px solid red"
+                },
+                {
+                    "id": "btn_padding",
+                    "name": "Button Padding",
+                    "description": "eg. 10px 10px 10px 10px",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "10px 10px 10px 10px"
+                },
+                {
+                    "id": "btn_margin",
+                    "name": "Button Margin",
+                    "description": "eg. 10px 50px 10px 50px",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "20px 20px 0 50px"
+                },
+                {
+                    "id": "btn_bgnd_color",
+                    "name": "Button Background Color",
+                    "description": "default: transparent",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "themer.colorpicker"
+                    },
+                    "required": false
+                },
+                {
+                    "id": "btn_font_size",
+                    "name": "Button Font Size",
+                    "description": "eg. 15px",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "15px"
+                },
+                {
+                    "id": "btn_color",
+                    "name": "Button color",
+                    "description": "eg. white",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "themer.colorpicker"
+                    },
+                    "required": false
+                },
+                {
+                    "id": "btn_font_family",
+                    "name": "Button Font Family",
+                    "description": "eg. Tahoma",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "Tahoma"
+                },
+                {
+                    "id": "btn_font_weight",
+                    "name": "Button Font Weight",
+                    "description": "eg. 800",
+                    "type": "enum",
+                    "values": [
+                        "100",
+                        "200",
+                        "300",
+                        "400",
+                        "500",
+                        "600",
+                        "700",
+                        "800",
+                        "900"
+                    ],
+                    "required": false,
+                    "default_value": "800"
+                },
+                {
+                    "id": "btn_font_style",
+                    "name": "Button Font Style",
+                    "description": "eg. italic",
+                    "type": "enum",
+                    "values": [
+                        "normal",
+                        "italic",
+                        "oblique"
+                    ],
+                    "required": false,
+                    "default_value": "italic"
+                },
+                {
+                    "id": "btn_text_align",
+                    "name": "Button Text Align",
+                    "description": "eg. center",
+                    "type": "enum",
+                    "values": [
+                        "left",
+                        "right",
+                        "center"
+                    ],
+                    "required": false,
+                    "default_value": "center"
+                },
+                {
+                    "id": "btn_border_radius",
+                    "name": "Button Border Radius (default: 5px)",
+                    "description": "",
+                    "type": "string",
+                    "required": false,
+                    "default_value": "5px"
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

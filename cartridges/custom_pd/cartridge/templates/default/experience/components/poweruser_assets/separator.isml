@@ -1,0 +1,39 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+</isscript>
+
+<div class="separator-container">
+    <div style="
+        display: flex;
+        width: ${pdict.width};
+        height: ${pdict.height};
+        border: ${pdict.border};
+        padding: ${pdict.padding};
+        margin: ${pdict.margin};
+        background-color: ${pdict.bgnd_color};
+        flex-direction: ${pdict.flex_direction};
+        justify-content: ${pdict.justify_content};
+        align-items: ${pdict.align_items};
+    ">
+        <div style="
+            width: ${pdict.left_width};
+            height: ${pdict.left_height};
+            background: ${pdict.left_bgnd};
+        "></div>
+
+        <div style="
+            font-size: ${pdict.sep_text_font_size};
+            color: ${pdict.sep_text_color};
+            font-family: ${pdict.sep_text_font_family};
+            font-weight: ${pdict.sep_text_font_weight};
+            font-style: ${pdict.sep_text_font_style};
+            text-align: ${pdict.sep_text_text_align};
+        ">${pdict.separator_text}</div>
+
+        <div style="
+            width: ${pdict.right_width};
+            height: ${pdict.right_height};
+            background: ${pdict.right_bgnd};
+        "></div>
+    </div>
+</div>
